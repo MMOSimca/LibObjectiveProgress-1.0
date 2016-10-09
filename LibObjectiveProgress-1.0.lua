@@ -4,19 +4,19 @@ Developed by: Simca@Malfurion (MMOSimca)
 ]]--
 
 -- Set major/minor version
-local MAJOR, MINOR = "LibObjectiveProgress-1.0", @project-version@
+local MAJOR, MINOR = "LibObjectiveProgress-1.0", @project-revision@
 assert(LibStub, MAJOR .. " requires LibStub")
 
 -- Initialize library
-local LibObjectiveProgress, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
-if not LibObjectiveProgress then return end
+local LOP, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
+if not LOP then return end
 
 -- Localized function references
 local GetNumQuestLogEntries = _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
 
 
-function LibObjectiveProgress:GetNPCWeightByMap(mapID, npcID, isTeeming)
+function LOP:GetNPCWeightByMap(mapID, npcID, isTeeming)
     -- Load map-based weight data if needed
     if not LOP.MapBasedWeights then LOP:LoadWeightDataByMap() end
 
@@ -29,7 +29,7 @@ function LibObjectiveProgress:GetNPCWeightByMap(mapID, npcID, isTeeming)
 end
 
 
-function LibObjectiveProgress:GetNPCWeightByQuest(questID, npcID)
+function LOP:GetNPCWeightByQuest(questID, npcID)
     -- Load map-based weight data if needed
     if not LOP.QuestBasedWeights then LOP:LoadWeightDataByQuest() end
 
@@ -41,7 +41,7 @@ function LibObjectiveProgress:GetNPCWeightByQuest(questID, npcID)
 end
 
 
-function LibObjectiveProgress:GetNPCWeightByCurrentQuests(npcID)
+function LOP:GetNPCWeightByCurrentQuests(npcID)
     -- Table variable declared here
     local questTable = nil
     
@@ -52,7 +52,7 @@ function LibObjectiveProgress:GetNPCWeightByCurrentQuests(npcID)
 
         -- If this row isn't a header, has a valid questID, and has a valid weight, then initialize the table and record the questID/weight pair
         if not isHeader and questID ~= 0 then
-            local weight = LibObjectiveProgress:GetNPCWeightByQuest(questID, npcID)
+            local weight = LOP:GetNPCWeightByQuest(questID, npcID)
             if weight then
                 questTable = questTable or {}
                 questTable[questID] = weight

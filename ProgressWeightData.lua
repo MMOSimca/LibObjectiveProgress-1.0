@@ -8,7 +8,7 @@ Contact Simca@Malfurion - either through MMO-Champion, through Curse (MMOSimca),
 You may use this data in any form for any purpose without my permission (though it'd be cool if you gave a shoutout somewhere).
 ]]--
 
-local LOP = LibStub(LibObjectiveProgress-1.0)
+local LOP = LibStub("LibObjectiveProgress-1.0")
 if not LOP then return end
 
 
