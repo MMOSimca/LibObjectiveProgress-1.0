@@ -21,7 +21,8 @@ function LOP:GetNPCWeightByMap(mapID, npcID, isTeeming)
     if not LOP.MapBasedWeights then LOP:LoadWeightDataByMap() end
 
     -- Ensure that specified map/NPC is valid
-    local tableIndex = (1 and isTeeming) or 2
+    local tableIndex = 1
+    if isTeeming then tableIndex = 2 end
     if not LOP.MapBasedWeights[mapID] or not LOP.MapBasedWeights[mapID][tableIndex] or not LOP.MapBasedWeights[mapID][tableIndex][npcID] then return nil end
 
     -- Get map-based weight data for specified NPC
