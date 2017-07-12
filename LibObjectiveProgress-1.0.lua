@@ -5,7 +5,7 @@ Developed by: Simca@Malfurion (MMOSimca)
 
 -- Set major/minor version
 -- Ideally, would use '@project-revision@' here, but it is broken in embeds, so manually incrementing this for now
-local MAJOR, MINOR = "LibObjectiveProgress-1.0", 17
+local MAJOR, MINOR = "LibObjectiveProgress-1.0", 18
 assert(LibStub, MAJOR .. " requires LibStub")
 
 -- Initialize library
