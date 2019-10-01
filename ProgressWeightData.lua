@@ -1,6 +1,6 @@
 --[[
 LibObjectiveProgress: Weight Data
-Last Updated: Patch 8.2.0 Live; @file-date-iso@
+Last Updated: Patch 8.2.5 Live; @file-date-iso@
 
 If you would like a copy of this data in a different format for your own purposes or to be informed of future updates:
 Contact MMOSimca / Simca@Malfurion - either through MMO-Champion, through CurseForge, or in-game
